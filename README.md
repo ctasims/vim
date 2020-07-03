@@ -1,19 +1,21 @@
 # vim
 
-# Settings Setup
-On a new machine, do the following to set up these vim settings
+# Windows Vim Settings Setup
+On a new machine, perform these three steps:
 
+1. Clone vim settings repo
 ```
 $ git clone git@github.com:ctasims/vim.git ~/.vim
 ```
 
+2. Tell vim to use settings file
 Add this to `~/.vimrc` to load the repo's vim settings. Adjust as needed for non-windows:
 ```
 let $MYVIMRC="~/.vim/vimrc"
 source $MYVIMRC
 ```
 
-Finally, open vim and initialize plugins:
+3. Open vim and initialize plugins:
 ```
 :PlugInstall
 :PlugUpdate
