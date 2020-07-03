@@ -1,5 +1,25 @@
 # vim
 
+# Settings Setup
+On a new machine, do the following to set up these vim settings
+
+```
+$ git clone git@github.com:ctasims/vim.git ~/.vim
+```
+
+Add this to `~/.vimrc` to load the repo's vim settings. Adjust as needed for non-windows:
+```
+let $MYVIMRC="~/.vim/vimrc"
+source $MYVIMRC
+```
+
+Finally, open vim and initialize plugins:
+```
+:PlugInstall
+:PlugUpdate
+:PlugClean - remove plugins that are deleted/commented out
+:source ~/.vimrc
+```
 
 
 # Vim Usage
