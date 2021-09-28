@@ -49,8 +49,8 @@ nmap ; :
 if has("gui_running")
     set path=p:
     cd p:/
-    set lines=55
-    set columns=250
+    set lines=61
+    set columns=275
 endif
 
 set nocompatible                " (cp) use Vim defaults (much better)
@@ -63,7 +63,9 @@ set copyindent                  " (ci) when auto-indenting, use the indenting fo
 set tabstop=4                   " (ts) width (in spaces) that a <tab> is displayed as
 set shiftwidth=4                " (sw) width (in spaces) used in each step of autoindent (aswell as << and >>)
 set expandtab                   " (et) expand tabs to spaces (use :retab to redo entire file)
-"set smartindent
+set smartindent
+
+set cino+=(0                    " align function params with parens after function name
 
 set textwidth=0                " (tw) number of columns before an automatic line break is inserted (see formatoptions)
 "set formatoptions=croq          " (fo) influences how vim automatically formats text
@@ -103,6 +105,8 @@ inoremap jk <ESC>
 let mapleader=" "             " Change map leader from \
 set encoding=utf-8
 
+noremap ,p "0p
+
 " let g:ycm_collect_identifiers_from_tag_Files = 1  " YCM collects identifiers from exuberant ctags
 " let g:ycm_add_preview_to_completeopt = 1  " preview window stores detailed info
 " let g:ycm_autoclose_preview_window_after_completion = 1
@@ -132,10 +136,26 @@ let g:NERDTrimTrailingWhitespace = 1
 " Enable NERDCommenterToggle to check all selected lines is commented or not 
 let g:NERDToggleCheckAllLines = 1
 
+" :map <leader>d <Plug>NERDCommenterToggle
+
+" maps comments. Note that ctrl-/ isn't recognized by vim usually.
+map <leader>d <plug>NERDCommenterToggle<CR>
+" map <leader>j <plug>NERDCommenterToggle<CR>
+" map <leader>/ <plug>NERDCommenterToggle<CR>
+" noremap <C-_> <plug>NERDCommenterToggle<CR>
+" nmap <C-_>   <plug>NERDCommenterToggle
+" vmap <C-_>   <plug>NERDCommenterToggle<CR>gv
+
 " Backups  
 set backupdir=~/vimtmp
 set directory=~/vimtmp
 set backup
+
+" Note: these do not work in Windows, which is hard-coded from the mouse driver :(
+:map <ScrollWheelUp> <C-Y>
+:map <S-ScrollWheelUp> <C-U>
+:map <ScrollWheelDown> <C-E>
+:map <S-ScrollWheelDown> <C-D>
 
 let html_use_css = 1            " the ':%TOhtml' command generates html without <font> tags
 
