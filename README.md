@@ -3,19 +3,23 @@
 # Windows Vim Settings Setup
 On a new machine, perform these three steps:
 
-1. Clone vim settings repo
+1. Download plug.vim plugin to autoload directory (<user>/vimfiles/autoload)
+
+2. Make directory for vim temp files: ~/vimtmp
+
+3. Clone vim settings repo
 ```
-$ git clone git@github.com:ctasims/vim.git ~/.vim
+$ git clone git@github.com:ctasims/vim.git p:/vim/
 ```
 
-2. Tell vim to use settings file
+4. Tell vim to use settings file
 Add this to `~/.vimrc` to load the repo's vim settings. Adjust as needed for non-windows:
 ```
-let $MYVIMRC="~/.vim/vimrc"
+let $MYVIMRC="p:/vim/vimrc"
 source $MYVIMRC
 ```
 
-3. Open vim and initialize plugins:
+5. Open vim and initialize plugins:
 ```
 :PlugInstall
 :PlugUpdate
