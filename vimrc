@@ -96,7 +96,7 @@ set foldenable                  " (fen) enables or disables folding. 'za' to ope
 
 set autowrite                   " Write the old file out when switching between files
 "set guifont=Inconsolata:h12:cANSI   " set font type and size. depends on resolution
-set guifont=Consolas:h13  " set font type and size. depends on resolution
+set guifont=Consolas:h11  " set font type and size. depends on resolution
 set antialias
 set visualbell
 set noerrorbells
@@ -140,6 +140,7 @@ let g:NERDToggleCheckAllLines = 1
 
 " maps comments. Note that ctrl-/ isn't recognized by vim usually.
 map <leader>d <plug>NERDCommenterToggle<CR>
+map <C-j> <plug>NERDCommenterToggle<CR>
 " map <leader>j <plug>NERDCommenterToggle<CR>
 " map <leader>/ <plug>NERDCommenterToggle<CR>
 " noremap <C-_> <plug>NERDCommenterToggle<CR>
